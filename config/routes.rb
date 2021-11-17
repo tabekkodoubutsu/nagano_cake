@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :create, :new, :edit, :show, :update]
     resources :sessions, only: [:new, :create, :destroy]
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :customers, only: [:edit, :show, :update, :destroy]
-    resources :orders, only: [:index, :show]
+    resources :customers, only: [:edit, :show, :update, :index]
+    resources :orders, only: [:update, :show]
     resources :order_details, only: [:update]
   end
   
