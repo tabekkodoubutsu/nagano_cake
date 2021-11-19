@@ -2,34 +2,32 @@
    <div class='container'>
      <div class='row'>
        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-         <h1>Editing Book</h1>
+         <h1>ジャンル編集</h1>
             <!--エラーメッセージここから-->
-            <% if @book.errors.any? %>
+            <% if @genre.errors.any? %>
               <div id="error_explanation">
-                <h3><%= @book.errors.count %> error prohibited this obj from being saved:</h3>
+                <h3><%= @genre.errors.count %> error prohibited this obj from being saved:</h3>
                 <ul>
-                  <% @book.errors.full_messages.each do |message| %>
+                  <% @genre.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                   <% end %>
                 </ul>
               </div>
             <% end %>
             <!--エラーメッセージここまで-->
-         <%= form_with model:@book, local:true do |f| %>
-           <div class="form-group">
-             <label for="book_title">Title</label>
-             <%= f.text_field :title, autofocus: true, id:"Title", :class =>'form-control book_title'%>
-           </div>
-           <div class="form-group">
-             <label for="book_opinion">Opinion</label>
-             <%= f.text_area :body, autofocus: true, id:"Opinion", :class =>'form-control book_body'%>
-           </div>
-           <div class="form-group">
-             <%= f.submit "Update Book", :class=>"btn btn-success"%>
-           </div>
-         <% end %>
-         <%= link_to"Show",book_path(@book.id) %> |
-         <%= link_to"Back",books_path %>
+         <!-- 編集フォーム -->
+         
+              <%= form_with model:@genre, url: admin_genre_path , local:true do |f| %>
+                 <div class="form-group">
+                  <label for="genre_name">ジャンル</label>
+                  <%= f.text_field :name, :class =>'form-control genre_name' %>
+                  <%= f.submit '変更を保存', class:"btn btn-success" %>
+                 </div>
+              <% end %>
+         
+         <!-- 編集フォームここまで -->
+         
+         <%= link_to"ジャンル一覧へ戻る",admin_genres_path %>
        </div>
      </div>
    </div>
