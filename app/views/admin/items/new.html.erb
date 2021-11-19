@@ -1,0 +1,28 @@
+<h1>商品新規投稿</h1>
+
+<%= form_with model :@item, local:true do |f| %>
+
+  <h4>商品画像</h4>
+  <%= f.text_field :image_id %>
+
+  <h4>商品名</h4>
+  <%= f.text_field :name %>
+
+  <h4>商品説明</h4>
+  <%= f.text_area :introduction %>
+  
+  <h4>ジャンル</h4>
+  
+
+  <h4>税抜価格</h4>
+  <%= f.text_field :price %>
+  
+  <h4>販売ステータス</h4>
+  <%= f.text_area :is_active %>
+  <label><%= f.radio_button :is_active, value: true %> 販売中 </label>
+  <label><%= f.radio_button :is_active, value: false %> 販売停止中</label>
+  
+  <%= f.submit '新規登録' %>
+
+<% end %>
+
