@@ -17,11 +17,10 @@
      
       
      <div class='row'>
-       <div class='col-md-8 offset-md-1'>
-         <h2>Books</h2>
+       <div class='col-md-12 offset-md-1'>
+         <h2>ジャンル一覧・追加</h2>
          <table class='table table-hover table-inverse'>
             <!-- 投稿フォーム -->
-              <h2 class="mt-3">ジャンル一覧・追加</h2>
               <%= form_with model: @genre, url: admin_genres_path , local:true do |f| %>
                  <div class="form-group">
                   <label for="genre_name">ジャンル</label>
@@ -30,7 +29,7 @@
                  <div class="form-group">
                   <%= f.submit 'Create Genre', class:"btn btn-success" %>
                  </div>
-             <% end %>
+              <% end %>
             <!-- 投稿フォームここまで -->
          </table>
          
