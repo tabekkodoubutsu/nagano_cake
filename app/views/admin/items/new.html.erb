@@ -1,9 +1,9 @@
 <h1>商品新規投稿</h1>
 
-<%= form_with model :@item, local:true do |f| %>
+<%= form_with url:admin_items_path, model:@item, local:true do |f| %>
 
   <h4>商品画像</h4>
-  <%= f.text_field :image_id %>
+  <%= f.attachment_field :image %>
 
   <h4>商品名</h4>
   <%= f.text_field :name %>
@@ -12,13 +12,12 @@
   <%= f.text_area :introduction %>
   
   <h4>ジャンル</h4>
-  
+  <%= f.text_area :genre_id %>
 
   <h4>税抜価格</h4>
   <%= f.text_field :price %>
   
   <h4>販売ステータス</h4>
-  <%= f.text_area :is_active %>
   <label><%= f.radio_button :is_active, value: true %> 販売中 </label>
   <label><%= f.radio_button :is_active, value: false %> 販売停止中</label>
   
