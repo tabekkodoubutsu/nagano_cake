@@ -1,5 +1,5 @@
 <%= form_with model: @item,local:true do |f| %>
-  <%= f.hidden_field :amount, value: "amount" %>
+  <%= f.hidden_field :amount, value: amount %>
   <%= f.select :amount, *[1..10] %>
   <%= f.submit 'カートに入れる', class: 'btn btn-success' %>
 <% end %>  
