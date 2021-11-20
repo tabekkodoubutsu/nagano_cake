@@ -1,6 +1,8 @@
 <h1>商品新規投稿</h1>
 
+
 <%= form_with url:admin_items_path, model:@item, local:true do |f| %>
+
 
   <h4>商品画像</h4>
   <%= f.attachment_field :image %>
