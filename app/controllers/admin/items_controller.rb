@@ -15,8 +15,11 @@ class Admin::ItemsController < ApplicationController
     #   redirect_to request.referer,notice:"新規登録できませんでした"
     # end 
   end
+  
   def edit
+    @item = Item.find(params[:id])
   end
+  
   def update
   end
   def index 
