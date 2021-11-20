@@ -1,0 +1,33 @@
+<div class="container mt-5 mb-5">
+  <div class="d-flex">
+    <h2 class="table-secondary mb-3 ml-3 d-inline">ショッピングカート</h2>
+    <div class="d-inline ml-auto mb-3">
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <div>
+      <table class="table table-hover table-bordered table-inverse">
+        <thead class="table-secondary">
+  　　　 　　<th>商品名</th>
+          <th>単価(税込)</th>
+          <th>数量</th>
+          <th>小計</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+      　       <td
+      　       ><%= cart_item.name%>
+              <td><%= cart_item.item.with_tax_price %></td>
+              <td><%= cart_item.subtotal %></td>
+              <% @total_payment +=  (cart_item.item.price * 1.1).floor * cart_item.amount %>
+          <% end %>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>  
+
+</div>
