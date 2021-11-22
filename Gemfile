@@ -52,3 +52,4 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.5'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'pry-byebug'
+gem "enum_help"
