@@ -1,5 +1,17 @@
+<h2>商品詳細</h22>
+<h4>
+ <%= attachment_image_tag @item, :image, fallback: "no-image.jpg", size: "300x200" %>
+</h4>
+ <div >商品名</div>
+ <div ><%= @item.name %></div>
+ <div > 商品説明</div>
+ <div ><%= @item.introduction %></div>
+ <div >ジャンル</div>
+ <%= @item.genre.name %>
+ <div >税込価格<br>(税抜価格)</div>
+  <%= @item.with_tax_price %>（<%= @item.price %>円）
+  
 <%= form_with model: @item, url: cart_items_path, local:true do |f| %>
-  <%= f.hidden_field :amount, value: amount %>
   <%= f.select :amount, *[1..10] %>
   <%= f.submit 'カートに入れる', class: 'btn btn-success' %>
 <% end %>  
