@@ -23,4 +23,5 @@ class Public::AddressesController < ApplicationController
     params.require(:address).permit(:name, :postal_code, :address)
   end
     
+
 end
