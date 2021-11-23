@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_084006) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "addresses", force: :cascade do |t|
     t.integer "customer_id"
     t.string "postal_code"
