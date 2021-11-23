@@ -5,6 +5,10 @@ class Public::OrdersController < ApplicationController
 
     def confirm
         @order = Order.new(order_params)
+        @order.shipping_cost = 800
+        @cart_items = current_customer.cart_items.all
+        @total = 0
+
         if params[:order][:select_address] == "0"
             @order.postal_code = current_customer.postal_code
             @order.address = current_customer.address
@@ -23,9 +27,6 @@ class Public::OrdersController < ApplicationController
               render :new
             end
         end
-        @cart_items = current_customer.cart_items.all
-        @total = 0
-        @total_payment = SHIPPING_COST + @total
     end    
 
     private
