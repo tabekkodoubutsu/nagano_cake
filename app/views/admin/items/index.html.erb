@@ -15,9 +15,13 @@
             <tr>
               <td><%= item.id %> </td>
              
+              <td>
+                <%= link_to admin_item_path(item.id) do %>
+                 <%= item.name %>
+                <% end %>
+              </td>
               <td><%= item.price %></td>
               <td><%= item.genre.name %></td>
-       
               <td> <% if item.is_active? %>
             <span class="text-success font-weight-bold">販売中</span>
           <% else %>
