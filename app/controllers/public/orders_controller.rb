@@ -50,6 +50,10 @@ class Public::OrdersController < ApplicationController
 
     def thanks
     end
+    
+    def index
+        @orders = current_customer.orders.all
+    end    
 
     private
     def order_params
