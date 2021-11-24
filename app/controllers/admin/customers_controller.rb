@@ -1,7 +1,7 @@
 class Admin::CustomersController < ApplicationController
   def index
     #@users = User.page(params[:page]).reverse_order
-    @customers= Customer.all
+    @customers= Customer.page(params[:page])
   end 
   
   def show
@@ -23,4 +23,9 @@ class Admin::CustomersController < ApplicationController
     end
   end 
   
+   private
+
+  def customer_params
+    params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postal_code, :address, :telephone_number, :is_deleted )
+  end
 end
