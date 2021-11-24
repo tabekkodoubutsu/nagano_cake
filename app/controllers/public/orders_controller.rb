@@ -21,17 +21,14 @@ class Public::OrdersController < ApplicationController
             @order.name = @address.name
 
         elsif params[:order][:select_address] == "2"
-            address_new = current_customer.address.new(address_params)
-            if address_new.save
-            else
-              render :new
-            end
+
         end
     end
 
     def create
         cart_items = current_customer.cart_items.all
         @order = current_customer.orders.new(order_params)
+         binding.pry
         if @order.save
           cart_items.each do |cart_item|
               order_detail = OrderDetail.new
@@ -50,10 +47,14 @@ class Public::OrdersController < ApplicationController
 
     def thanks
     end
-    
+
     def index
         @orders = current_customer.orders.all
-    end    
+    end
+
+    def show
+       @order = Order.find(params[:id])
+    end
 
     private
     def order_params

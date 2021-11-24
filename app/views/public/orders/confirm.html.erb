@@ -84,7 +84,7 @@
       <%= f.hidden_field :name %>
       <%= f.hidden_field :payment_method %>
       <%= f.hidden_field :shipping_cost %>
-      <%= f.hidden_field :total_payment => [@order.shipping_cost.to_i + @total] %>
+      <%= f.hidden_field :total_payment, :value => [@order.shipping_cost.to_i + @total] %>
       <%= f.submit "注文を確定する", class: 'btn btn-success mt-4 mx-auto' %>
     <% end %>
   </div>
