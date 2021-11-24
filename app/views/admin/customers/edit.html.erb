@@ -4,7 +4,7 @@
      
      <div class='col-md-12'>
        <h2><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h2>
-       <%= form_with model:@customer, local:true do |f| %>
+       <%= form_with model:@customer, url:admin_customer_path, local:true do |f| %>
          <table class='table table-hover table-inverse'>
             <tr>
               <td>会員ID</td>
