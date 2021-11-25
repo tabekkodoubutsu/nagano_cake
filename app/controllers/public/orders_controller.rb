@@ -28,7 +28,6 @@ class Public::OrdersController < ApplicationController
     def create
         cart_items = current_customer.cart_items.all
         @order = current_customer.orders.new(order_params)
-         binding.pry
         if @order.save
           cart_items.each do |cart_item|
               order_detail = OrderDetail.new
