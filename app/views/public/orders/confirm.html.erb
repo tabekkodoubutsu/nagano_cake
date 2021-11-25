@@ -2,7 +2,7 @@
     <h4 class="table-secondary mb-3 ml-3 d-inline">注文情報確認</h4>
 </div>
 <div class="d-flex">
-  <div class="d-inline row col-lg-9">
+  <div class="d-inline row col-9">
     <table class="table table-hover table-bordered table-inverse">
       <thead class="table-secondary">
           <th>商品名</th>
@@ -84,7 +84,7 @@
       <%= f.hidden_field :name %>
       <%= f.hidden_field :payment_method %>
       <%= f.hidden_field :shipping_cost %>
-      <%= f.hidden_field :total_payment => [@order.shipping_cost.to_i + @total] %>
+      <%= f.hidden_field :total_payment, :value => [@order.shipping_cost.to_i + @total] %>
       <%= f.submit "注文を確定する", class: 'btn btn-success mt-4 mx-auto' %>
     <% end %>
   </div>
