@@ -1,5 +1,4 @@
-<main>
-   <div class='container'>
+<div class='container'>
      <div class='row'>
        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
          <h1>商品編集</h1>
@@ -18,49 +17,53 @@
             <!--エラーメッセージここまで-->
             
          <!-- 編集フォーム -->
-         
-              <%= form_with model: @item, url: admin_genre_path , local:true do |f| %>
-                 <div class="form-group">
-                  <label for="genre_name">ジャンル</label>
-                  <%= f.text_field :name, :class =>'form-control genre_name' %>
-                  <%= f.submit '変更を保存', class:"btn btn-success" %>
-                 </div>
-              <% end %>
               
-              <%= form_with model: @item, local:true do |f| %>
-                <!-- 画像 -->
-                <div class="form-group">
-                  <label for="inputImage">商品画像</label>
-                  <%= f.attachment_field :item_image, placeholder: "商品画像",:class =>"form-control-file user_image" %>
-                        <!-- $ rails g migration AddItemImageIdToItems item_image_id:string 未入力 -->
-                </div>
-                <!-- 商品名 -->
-                <div class="form-group">
-                  <label>商品名</label>
-                  <%= f.text_field :name, autofocus: true, :class =>'form-control book_title'%>
-                </div>
-                <!-- 商品説明 -->
-                <div class="form-group">
-                  <label for="book_opinion">商品説明</label>
-                  <%= f.text_area :introduction, autofocus: true, :class =>'form-control book_body'%>
-                </div>
-                <!-- ジャンル -->
-                <select genre="genre_name">
-                  <%@genres.each do |genre|%>
-                    <option value=<%="#{genre.genre_name}"%>><%=genre.genre_name%></option>
-                  <%end%>
-                </select>
-                <!-- 税抜価格 -->
-                <div class="form-group">
-                  <label>税抜価格</label>
-                  <%= f.text_field :price, autofocus: true, :class =>'form-control book_title'%>
-                </div>
-                <!-- 販売ステータス -->
-                
+              <%= form_with model: @item, url: admin_item_path , local:true do |f| %>
+                <table class='table table-hover table-inverse'>
+                  <!-- 画像 -->
+                  <tr>
+                    <td>商品画像</td>
+                    <td><%= f.attachment_field :image, placeholder: "商品画像",:class =>"form-control-file user_image" %></td>
+                  </tr>
+                  
+                  <!-- 商品名 -->
+                  <tr>
+                    <td>商品名</td>
+                    <td><%= f.text_field :name, autofocus: true, :class =>'form-control book_title'%></td>
+                  </tr>
+                  
+                  <!-- 商品説明 -->
+                  <tr>
+                    <td>商品説明</td>
+                    <td><%= f.text_area :introduction, autofocus: true, :class =>'form-control book_body'%></td>
+                  </tr>
+                  
+                  <!-- ジャンル -->
+                  <tr>
+                    <td>ジャンル</td>
+                    <td>
+                      <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+                    </td>
+                  </tr>
+                  
+                  <!-- 税抜価格 -->
+                  <tr>
+                    <td>税抜価格</td>
+                    <td><%= f.text_field :price, autofocus: true, :class =>'form-control book_title'%></td>
+                  </tr>
+                  
+                  <!-- 販売ステータス -->
+                  <tr>
+                    <td>販売ステータス</td>
+                    <td>
+                      <%=f.radio_button :is_active, TRUE %>販売中 <%=f.radio_button :is_active, FALSE %>販売停止中
+                    </td>
+                  </tr>
+                </table>
                 <!-- 決定ボタン -->
-                 <div class="form-group">
-                   <%= f.submit "変更を保存", :class=>"btn btn-success"%>
-                 </div>
+                  <div class="form-group">
+                    <%= f.submit "変更を保存", :class=>"btn btn-success"%>
+                  </div>
               <% end %>
                
          <!-- 編集フォームここまで -->
@@ -68,5 +71,4 @@
          <%= link_to"商品詳細へ戻る",admin_item_path %>
        </div>
      </div>
-   </div>
-</main>
+</div>
