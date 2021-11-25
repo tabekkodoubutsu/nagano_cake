@@ -21,7 +21,15 @@ class Admin::ItemsController < ApplicationController
   end
   
   def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+       flash[:notice] = 'You have updated item successfully.'
+       redirect_to admin_item_path
+    else
+       render :edit
+    end
   end
+  
   def index 
     @items=Item.all
   end
