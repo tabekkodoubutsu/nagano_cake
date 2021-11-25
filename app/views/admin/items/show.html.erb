@@ -1,11 +1,12 @@
-<h2>商品詳細</h22>
- <div class="row mb-3">
+<h2>商品詳細</h2>
+ <div class="row">
+  <div class="container">
+  <div class="row">
+ <div class="col-md-6">
  <%= attachment_image_tag @item, :image, fallback: "no_image.jpg", size: "300x200" %>
- </div>
-  <div class="col">
-  <table >
-  <tbody>
-  <tr>
+ </div> 
+ <div class="col-md-6">
+  <table > <tr>
    <th>商品名</th>
    <td><%= @item.name %></td> </tr>
   <tr>
@@ -17,7 +18,6 @@
    <tr>
   <th>税込価格<br>(税抜価格)</th>
   <td><%= @item.with_tax_price %>（<%= @item.price %>円）</td> </tr>
-
   <tr>
   <th>販売ステータス</th>
   <td>
@@ -27,8 +27,6 @@
            <span class="text-success font-weight-bold">販売中</span>
           <% end %>
   </td></tr>
-  <tr>  <td>
-       <%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-outline-success" %>  
+  <tr>  <td><%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-outline-success" %>  
    </td></tr>
- </tbody>
- </table> </div>
+    </table> </div> </div> </div> </div>
