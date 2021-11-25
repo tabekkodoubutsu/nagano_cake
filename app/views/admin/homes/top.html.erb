@@ -13,18 +13,18 @@
              </tr>
            </thead>
            <tbody>
-             <% @order_details.each do |order_detail| %>
+             <% @orders.each do |order| %>
                <tr>
-                 <td><%= order_detail.order.created_at %></td>
-                 <td><%= order_detail.order.customer.last_name %><%= order_detail.order.customer.first_name %></td>
-                 <td><%= order_detail.amount %></td>
-                 <td>
-                   <%= order_detail.order.payment_method %><%#= order_detail.order.status %></td>
+                 <td><%= link_to order.created_at,admin_order_path(order.id)%></td>
+                 <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
+                 <td><%= order.order_details.sum(:amount) %></td>
+                 <td><%= order.status_i18n %></td>
+                 <td><%= order.id %></td>
                </tr>
              <% end %>
            </tbody>
          </table>
-        <%= paginate @order_details %>
+        <%= paginate @orders %>
        </div>
      </div>
 </div>
