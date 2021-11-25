@@ -1,5 +1,7 @@
+<div class="container">
+  <table >
+  <tbody>
 <h1>商品新規投稿</h1>
-
 
 <%= form_with url:admin_items_path, model:@item, local:true do |f| %>
 
@@ -23,8 +25,10 @@
   <h4>販売ステータス</h4>
   <label><%= f.radio_button :is_active, value: true %> 販売中 </label>
   <label><%= f.radio_button :is_active, value: false %> 販売停止中</label>
-  
-  <%= f.submit '新規登録' %>
-
+  <tr>  <td>
+  <%= f.submit '新規登録', class: "btn btn-outline-success" %>
+ </td></tr>
 <% end %>
-
+ </tbody>
+ </table>
+</div>
