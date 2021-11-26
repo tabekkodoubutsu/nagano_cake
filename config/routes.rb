@@ -22,7 +22,8 @@ Rails.application.routes.draw do
     root "homes#top"
     get "/about" => "homes#about"
     get "/orders/thanks" => "orders#thanks"
-    resource :customers, only: [:show, :edit, :update]
+    resources :customers, only: [:edit, :update]
+    get "/customers/my_page" => "customers#show"
     get "/customers/unsubscribe" => "customers#unsubscribe"
     patch "/customers/withdraw" => "customers#withdraw"
     resources :items, only: [:index, :show]
@@ -34,5 +35,5 @@ Rails.application.routes.draw do
     get "/orders/complete" => "orders#complete"
     resources :addresses, only: [:index, :edit ,:create, :update, :destroy]
   end
-
+ 
 end
