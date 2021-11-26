@@ -1,12 +1,13 @@
 class Admin::OrdersController < ApplicationController
-  
+  before_action :authenticate_admin!
+
   def show
     @order= Order.find(params[:id])
     @order_detail= @order.order_details
     #@customer = Customer.find(params[:id])
     #@orders = @customer.orders
-  end 
-  
+  end
+
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
@@ -15,13 +16,13 @@ class Admin::OrdersController < ApplicationController
     else
       render :show
     end
-  end 
-  
-  
+  end
+
+
   private
 
   def order_params
     params.require(:order).permit(:status)
   end
-  
+
 end
