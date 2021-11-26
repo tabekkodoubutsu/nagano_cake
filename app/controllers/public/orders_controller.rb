@@ -1,4 +1,6 @@
 class Public::OrdersController < ApplicationController
+    before_action :authenticate_customer!
+    
     def new
         @order = Order.new
     end
@@ -35,6 +37,7 @@ class Public::OrdersController < ApplicationController
               order_detail.order_id = @order.id
               order_detail.amount = cart_item.amount
               order_detail.price = cart_item.item.price
+              order_detail.making_status = 0
               order_detail.save
           end
           current_customer.cart_items.destroy_all
