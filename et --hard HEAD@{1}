@@ -1,0 +1,52 @@
+[33m4d5e5d4[m[33m ([m[1;36mHEAD -> [m[1;32mhasshi[m[33m, [m[1;31morigin/develop[m[33m)[m HEAD@{0}: pull origin develop: Fast-forward
+[33m4339bcb[m[33m ([m[1;31morigin/hasshi[m[33m)[m HEAD@{1}: commit: add ヘッダー
+[33m44ede57[m HEAD@{2}: commit: add 検窓
+[33m654bb1a[m HEAD@{3}: pull origin develop: Fast-forward
+[33m07e4eb3[m HEAD@{4}: commit: fix 商品詳細
+[33me90261f[m HEAD@{5}: commit (merge): fix
+[33m04bf9a0[m HEAD@{6}: commit: add ヘッダー
+[33m21c838c[m HEAD@{7}: commit: add 退会ユーザーのログイン処理
+[33m2f7c730[m HEAD@{8}: commit: fix 商品機能の修正
+[33m2d7bdc7[m HEAD@{9}: pull origin develop: Fast-forward
+[33m30036a3[m HEAD@{10}: reset: moving to HEAD^
+[33m4e62d71[m HEAD@{11}: commit: add edit機能
+[33m30036a3[m HEAD@{12}: commit: add aboutページ
+[33m1e42f93[m HEAD@{13}: pull origin develop: Fast-forward
+[33ma845e8e[m HEAD@{14}: commit: fix schema
+[33m94238a6[m HEAD@{15}: commit: add 配送先
+[33m0528eea[m HEAD@{16}: pull origin develop: Fast-forward
+[33m7481011[m HEAD@{17}: commit: fix 確認のため
+[33mc86a9fc[m HEAD@{18}: commit: d
+[33m4798b81[m HEAD@{19}: commit: d
+[33mf3570c1[m HEAD@{20}: commit: d
+[33me2f237c[m HEAD@{21}: pull origin develop: Fast-forward
+[33md0076ec[m HEAD@{22}: commit: index機能の追加
+[33mda16092[m HEAD@{23}: pull origin develop: Fast-forward
+[33mc618312[m HEAD@{24}: commit: 21日
+[33mfab681b[m HEAD@{25}: pull origin develop: Fast-forward
+[33m41910cf[m HEAD@{26}: pull origin develop: Fast-forward
+[33m3583083[m HEAD@{27}: commit: gazou
+[33me9ed830[m HEAD@{28}: pull origin develop: Fast-forward
+[33mfa57b5d[m HEAD@{29}: commit (merge): hasshi19
+[33m3f5fe7c[m HEAD@{30}: commit: hasshi19
+[33m2f89667[m HEAD@{31}: commit (merge): hasshi19
+[33m297b043[m HEAD@{32}: commit: hasshi19
+[33m0c3eb90[m HEAD@{33}: reset: moving to origin/develop
+[33m80559fa[m HEAD@{34}: pull origin develop: Fast-forward
+[33mef4a80b[m HEAD@{35}: pull origin develop: Fast-forward
+[33m7232574[m[33m ([m[1;32mdevelop[m[33m)[m HEAD@{36}: merge origin/develop: Fast-forward
+[33m36035a0[m HEAD@{37}: checkout: moving from develop to hasshi
+[33m7232574[m[33m ([m[1;32mdevelop[m[33m)[m HEAD@{38}: pull origin develop: Fast-forward
+[33m67ba61d[m HEAD@{39}: checkout: moving from hasshi to develop
+[33m36035a0[m HEAD@{40}: reset: moving to HEAD
+[33m36035a0[m HEAD@{41}: checkout: moving from develop to hasshi
+[33m67ba61d[m HEAD@{42}: pull origin develop: Fast-forward
+[33mc72482a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{43}: checkout: moving from hasshi to develop
+[33m36035a0[m HEAD@{44}: commit: test2
+[33mc72482a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{45}: checkout: moving from develop to hasshi
+[33mc72482a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{46}: pull origin main: Fast-forward
+[33meee9bc7[m HEAD@{47}: pull origin develop: Fast-forward
+[33ma070ea1[m HEAD@{48}: checkout: moving from develop to develop
+[33ma070ea1[m HEAD@{49}: pull origin develop: Fast-forward
+[33md221ad4[m[33m ([m[1;32mmain[m[33m)[m HEAD@{50}: checkout: moving from main to develop
+[33md221ad4[m[33m ([m[1;32mmain[m[33m)[m HEAD@{51}: clone: from github.com:tabekkodoubutsu/nagano_cake.git
