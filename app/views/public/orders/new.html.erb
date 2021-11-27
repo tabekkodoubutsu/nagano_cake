@@ -20,7 +20,7 @@
 <br>
     <%= f.radio_button :select_address, 1 %>
     <%= f.label :select_address, "登録済み住所から選択" %><br>
-    <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :full_address) %><br>
+    <%= f.select :address_id, options_from_collection_for_select(current_customer.addresses.all, :id, :full_address) %><br>
 <br>
     <%= f.radio_button :select_address, 2 %>
     <%= f.label :select_address, "新しいお届け先" %><br>
@@ -30,7 +30,7 @@
         <div class="field col-3">
         <%= f.text_field :postal_code %><br>
         </div>
-      </div>  
+      </div>
       <div class="form-group row">
         <label class="col-3 control-label">住所</label>
         <div class="field col-3">
@@ -42,8 +42,8 @@
         <div class="field col-3">
           <%= f.text_field :name %><br>
         </div>
-      </div>  
-    </div>  
+      </div>
+    </div>
 <br>
     <div class="row">
       <%= f.submit "確認画面へ進む", class: "col-2 ml-5 btn btn-primary" %>
