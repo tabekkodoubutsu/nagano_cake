@@ -2,7 +2,7 @@
 
 class Customer::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  # before_action :customer_state, only: [:create]  
+   before_action :customer_state, only: [:create]  
     # before_action :reject_user, only: [:create]
 
   # GET /resource/sign_in
@@ -41,7 +41,7 @@ class Customer::SessionsController < Devise::SessionsController
 # # 退会しているかを判断するメソッド
   def customer_state
     ## 【処理内容1】 入力されたemailからアカウントを1件取得
-    @customer = Customer.find_by(email: parms[:customer][:email])
+    @customer = Customer.find_by(email: params[:customer][:email])
   
     ## アカウントを取得できなかった場合、このメソッドを終了する
     return if !@customer
