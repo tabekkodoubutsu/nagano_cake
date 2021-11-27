@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:edit, :show, :update, :index]
     resources :orders, only: [:update, :show]
     resources :order_details, only: [:update]
+    get '/admin/sign_out' => 'devise/sessions#destroy'
   end
 
   scope module: :public do
