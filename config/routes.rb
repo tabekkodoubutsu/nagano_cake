@@ -22,10 +22,10 @@ Rails.application.routes.draw do
     root "homes#top"
     get "/about" => "homes#about"
     get "/orders/thanks" => "orders#thanks"
-    resources :customers, only: [:edit, :update]
     get "/customers/my_page" => "customers#show"
     get "/customers/unsubscribe" => "customers#unsubscribe"
     patch "/customers/withdraw" => "customers#withdraw"
+    resources :customers, only: [:edit, :update]
     resources :items, only: [:index, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     delete "/cart_items" => "cart_items#all_destroy"
