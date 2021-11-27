@@ -7,15 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+
        <h1><a href="/">ながのCAKE</a>  </h1>
     <!--会員がログインしている場合-->
      <nav class="pc-nav">
      <ul>
     <% if customer_signed_in? %>
-   
+
      <li class="name-link">ようこそ、<%= current_customer.last_name + current_customer.first_name %>様！</li>
-     
+
      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete ,class: 'btn btn-outline-secondary mx-3 my-1'%></li>
      <li><%= link_to " 商品一覧", items_path ,class: 'btn btn-outline-secondary mx-3 my-1'%></li>
      <li><%= link_to " カート", cart_items_path,class: 'btn btn-outline-secondary mx-3 my-1' %></li>
@@ -34,7 +34,7 @@
      <li> <%= link_to "新規登録", new_customer_registration_path,class: 'btn btn-outline-secondary mx-3 my-1'%></li>
      <li> <%= link_to "ログイン", new_customer_session_path,class: 'btn btn-outline-secondary mx-3 my-1'%>  </li>
     <% end %>
-      
+
     <!-- ログアウト機能仮ここまで -->
      <%= form_with url: items_path, local: true, method: :get do |f| %>
       <%= f.text_field :word  %>
