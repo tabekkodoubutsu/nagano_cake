@@ -1,0 +1,70 @@
+<div class='container px-5 px-sm-0'>
+     
+    <div class='row'>
+      <div class='col-md-12 offset-md-1'>
+        <h2>注文履歴詳細</h2>
+        <!-- 購入者情報 -->
+        <table class='table table-hover table-inverse'>
+          <tr>
+              <th>購入者</th>
+              <td><%= @order.customer.last_name %><%= @order.customer.first_name %></td>
+          </tr>
+          <tr>
+              <th>注文日</th>
+              <td><%= @order.created_at %></td>
+          </tr>
+          <tr>
+              <th>配送先</th>
+              <td><%= @order.address %></td>
+          </tr>
+          <tr>
+              <th>注文ステータス</th>
+              <td>
+
+                <%= form_with model: @order, url: admin_order_path, local:true do |f| %>
+                  <%#= f.collection_select :status, @order, :status, :status_i18n %>
+                  <%= f.select :status, Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %>
+                  <%= f.submit "更新", :class=>"btn btn-success"%>
+                <% end %>
+              </td>
+          </tr>
+          <tr>
+              <th>id</th>
+              <td><%= @order.id %></td>
+          </tr>
+        </table>
+        
+        <!-- 購入商品情報 -->
+        
+        <table class='table table-hover table-inverse'>
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>単価（税込）</th>
+              <th>数量</th>
+              <th>小計</th>
+              <th>製作ステータス</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order_detail.each do |order_detail| %>
+              <tr>
+                <td><%= order_detail.item.name %></td>
+                <td><%= order_detail.item.price %></td>
+                <td><%= order_detail.amount %></td>
+                <td><%= order_detail.item.price * order_detail.amount%></td>
+                <td><%= order_detail.making_status_i18n %></td>
+                <td>
+                  <%= form_with model: order_detail, url:admin_order_detail_path(order_detail.id),  local:true do |f| %>
+                    <%= f.select :making_status, OrderDetail.making_statuses.keys.map {|k| [I18n.t("enums.order_detail.making_status.#{k}"), k]} %>
+                    <%= f.submit "更新", :class=>"btn btn-success"%>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+       </div>
+     </div>
+</div>
