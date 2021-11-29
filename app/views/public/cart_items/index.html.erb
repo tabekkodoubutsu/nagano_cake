@@ -25,7 +25,7 @@
                 </div>
                 <%= cart_item.item.name%>
                 </td>
-              <td><%= cart_item.item.with_tax_price %></td>
+              <td><%= cart_item.item.with_tax_price %>円</td>
               <td>
                 <%= form_with model: cart_item, url: cart_item_path(cart_item), local:true do |f| %>
                   <%= f.hidden_field :cart_item_id, value: cart_item.id %>
@@ -33,7 +33,7 @@
                   <%= f.submit '変更', class: 'btn btn-success' %>
               <% end %>
               </td>
-              <td><%= cart_item.subtotal %></td>
+              <td><%= cart_item.subtotal %>円</td>
               <% @total_payment +=  (cart_item.item.price * 1.1).floor * cart_item.amount %>
           　　<td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: 'btn btn-danger' %></td>
             </tr>
@@ -50,7 +50,7 @@
           <table class="table table-bordered">
             <tr>
               <th class="table-secondary">合計金額</th>
-              <td><%= @total_payment %></td>
+              <td><%= @total_payment %>円</td>
             </tr>
           </table>
         </div>

@@ -21,13 +21,13 @@
                 <%= cart_item.item.name %>
             </td>
             <td>
-              <%= cart_item.item.with_tax_price %>
+              <%= cart_item.item.with_tax_price %>円
             </td>
             <td>
               <%= cart_item.amount %>
             </td>
             <td>
-              <%= cart_item.subtotal %>
+              <%= cart_item.subtotal %>円
             </td>
             <% @total += cart_item.subtotal %>
           </tr>
@@ -41,17 +41,17 @@
        <tr>
          <th class="table-secondary">送料</th>
          <td>
-           <%= @order.shipping_cost.to_s %>
+           <%= @order.shipping_cost.to_s %>円
          </td>
         </tr>
         <tr>
           <th class="table-secondary">商品合計</th>
-          <td><%= @total %></td>
+          <td><%= @total %>円</td>
         </tr>
         <tr>
           <th class="table-secondary">請求金額</th>
           <td>
-            <%= @order.shipping_cost.to_i + @total %>
+            <%= @order.shipping_cost.to_i + @total %>円
           </td>
         </tr>
       </table>
